@@ -104,14 +104,14 @@ for u in userIDs:
                         'tweet_text': tweet.full_text,
                         'screen_name': tweet.user._json['screen_name'],
                         'hashtag': hashtags,
-                        'covid_related': None,
+                        'covid_related': -1,
                         }
             data.append(onetweet)
         if reached_date:
             break
     all_data.extend(data)
 
-
+# https://www.reddit.com/r/sheets/comments/i5yxwl/is_there_a_way_to_build_a_google_forms_question/
 with open('test_tweets1.json', 'w') as json_file:
   dump(all_data, json_file)
 
